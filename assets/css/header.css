@@ -13,7 +13,7 @@
   background-position: center top;
   background-repeat: no-repeat;
   transition: transform var(--transition-normal), opacity var(--transition-normal);
-  height: clamp(70px, 9vh, 200px);
+  height: clamp(80px, 9vh, 200px);
 }
 
 /* Header is hidden by default when scrolling down */
@@ -223,6 +223,10 @@
 }
 
 @media (max-width: 768px) {
+
+  .site-header {
+    height: clamp(50px, 7vh, 80px);
+  }
   .header-overlay {
     padding: var(--spacing-sm) var(--spacing-md);
   }
