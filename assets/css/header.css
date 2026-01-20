@@ -13,7 +13,7 @@
   background-position: center top;
   background-repeat: no-repeat;
   transition: transform var(--transition-normal), opacity var(--transition-normal);
-  height: clamp(70px, 10vh, 120px);
+  height: clamp(70px, 9vh, 120px);
 }
 
 /* Header is hidden by default when scrolling down */
@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
   height: 100%;
   position: relative;
 }
@@ -61,15 +61,16 @@
   justify-content: flex-end;
 }
 
-/* ==================== Logo ==================== */
+/* ==================== Title ==================== */
 
-.header-logo {
+.header-title {
   display: block;
-  max-width: 700px;
+  max-width: 550px;
   width: 100%;
+  margin-bottom: var(--spacing-xs);
 }
 
-.header-logo img {
+.header-title img {
   width: 100%;
   height: auto;
   display: block;
@@ -102,7 +103,7 @@
 .header-nav {
   display: flex;
   gap: var(--spacing-lg);
-  margin-top: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
 }
 
 .header-nav a {
@@ -207,7 +208,7 @@
     gap: var(--spacing-md);
   }
   
-  .header-logo {
+  .header-title {
     max-width: 400px;
   }
   
@@ -245,7 +246,7 @@
     align-items: center;
   }
 
-  .header-logo {
+  .header-title {
     max-width: 350px;
   }
 
@@ -259,7 +260,7 @@
     padding: var(--spacing-xs) var(--spacing-sm);
   }
 
-  .header-logo {
+  .header-title {
     max-width: 280px;
   }
 }
