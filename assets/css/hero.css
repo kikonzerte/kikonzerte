@@ -1,0 +1,111 @@
+/* ============================================
+   Hero Section Styles
+   ============================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px; /* Minimum height to accommodate stacked buttons on mobile */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Image */
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Buttons Container */
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--spacing-lg);
+}
+
+/* Desktop: Buttons on left and right (over curtains) */
+@media (min-width: 769px) {
+  .hero-buttons {
+    justify-content: space-between;
+    padding: 0 10%; /* Adjust this to position buttons over the curtains */
+  }
+  
+  .hero-btn-left {
+    /* Position over left curtain */
+  }
+  
+  .hero-btn-right {
+    /* Position over right curtain */
+  }
+}
+
+/* Mobile: Buttons stacked vertically */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 600px; /* Increased minimum for stacked buttons */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+  }
+  
+  .hero-btn-left,
+  .hero-btn-right {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-buttons {
+    padding: 0 5%;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero-buttons {
+    gap: var(--spacing-md);
+  }
+  
+  .btn-lg {
+    font-size: var(--font-size-normal);
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}

@@ -1,0 +1,265 @@
+/* ============================================
+   Header Styles
+   ============================================ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-fixed);
+  background-image: url('../img/header.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+/* Header is hidden by default when scrolling down */
+.site-header.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Header shows when scrolling up */
+.site-header.header-visible {
+  transform: translateY(0);
+}
+
+/* Header Overlay Container */
+.header-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  min-height: 100px;
+  position: relative;
+}
+
+/* ==================== Header Sections ==================== */
+
+.header-left,
+.header-center,
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  justify-content: flex-start;
+  gap: var(--spacing-md);
+}
+
+.header-center {
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+/* ==================== Logo ==================== */
+
+.header-logo {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+}
+
+.header-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==================== Social Icons ==================== */
+
+.social-icon {
+  color: var(--color-dark-blue);
+  transition: color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  color: var(--color-orange);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==================== Navigation ==================== */
+
+.header-nav {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xs);
+}
+
+.header-nav a {
+  font-family: var(--font-body);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.05em;
+}
+
+.header-nav a:hover,
+.header-nav a:focus {
+  color: var(--color-orange);
+}
+
+/* ==================== Contact Button ==================== */
+
+.header-contact-btn {
+  font-size: var(--font-size-small);
+  padding: var(--spacing-xs) var(--spacing-md);
+}
+
+/* ==================== Mobile Menu ==================== */
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-dark-blue);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu-toggle:hover span,
+.mobile-menu-toggle:focus span {
+  background-color: var(--color-orange);
+}
+
+/* Mobile menu toggle animation when open */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(222, 222, 222, 0.98);
+  padding: var(--spacing-md) var(--spacing-lg);
+  gap: var(--spacing-sm);
+  border-top: 1px solid var(--color-light-grey);
+}
+
+.mobile-nav.active {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-family: var(--font-body);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-blue);
+  text-decoration: none;
+  padding: var(--spacing-sm) 0;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.05em;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+  color: var(--color-orange);
+}
+
+/* ==================== Responsive Design ==================== */
+
+@media (max-width: 992px) {
+  .header-left {
+    gap: var(--spacing-sm);
+  }
+
+  .header-nav {
+    gap: var(--spacing-md);
+  }
+  
+  .header-logo {
+    max-width: 300px;
+  }
+  
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-overlay {
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-height: 80px;
+  }
+
+  /* Hide desktop navigation and social icons */
+  .desktop-nav,
+  .header-left,
+  .header-contact-btn {
+    display: none;
+  }
+
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Adjust header layout for mobile */
+  .header-center {
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .header-logo {
+    max-width: 250px;
+  }
+
+  .header-right {
+    flex: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-overlay {
+    padding: var(--spacing-sm);
+    min-height: 70px;
+  }
+
+  .header-logo {
+    max-width: 200px;
+  }
+}
