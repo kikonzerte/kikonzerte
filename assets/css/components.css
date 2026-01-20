@@ -41,16 +41,12 @@
   background-color: var(--color-orange);
   color: var(--color-white);
   border: 3px solid var(--color-white);
-  outline: 3px solid var(--color-black);
-  outline-offset: -6px;
 }
 
 .btn-orange:hover,
 .btn-orange:focus {
   background-color: var(--color-dark-blue);
   border: 3px solid var(--color-white);
-  outline: 3px solid var(--color-orange);
-  outline-offset: -6px;
   color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
@@ -65,9 +61,7 @@
 .btn-orange-outline {
   background-color: transparent;
   color: var(--color-orange);
-  border: 3px solid var(--color-orange);
-  outline: 3px solid var(--color-black);
-  outline-offset: 3px;
+  border: 3px solid var(--color-white);
 }
 
 .btn-orange-outline:hover,
@@ -75,8 +69,6 @@
   background-color: var(--color-orange);
   color: var(--color-white);
   border: 3px solid var(--color-white);
-  outline: 3px solid var(--color-black);
-  outline-offset: -6px;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -86,16 +78,12 @@
   background-color: var(--color-dark-blue);
   color: var(--color-white);
   border: 3px solid var(--color-white);
-  outline: 3px solid var(--color-orange);
-  outline-offset: -6px;
 }
 
 .btn-blue:hover,
 .btn-blue:focus {
   background-color: var(--color-orange);
   border: 3px solid var(--color-white);
-  outline: 3px solid var(--color-dark-blue);
-  outline-offset: -6px;
   color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
@@ -105,9 +93,7 @@
 .btn-white {
   background-color: var(--color-white);
   color: var(--color-orange);
-  border: 3px solid var(--color-orange);
-  outline: 3px solid var(--color-black);
-  outline-offset: -6px;
+  border: 3px solid var(--color-white);
 }
 
 .btn-white:hover,
@@ -115,8 +101,6 @@
   background-color: var(--color-orange);
   color: var(--color-white);
   border: 3px solid var(--color-white);
-  outline: 3px solid var(--color-black);
-  outline-offset: -6px;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
