@@ -54,7 +54,7 @@
 .header-center {
   justify-content: center;
   flex-direction: column;
-  gap: 0;
+  gap: var(--spacing-sm);
   padding-top: var(--spacing-sm);
 }
 
@@ -74,6 +74,8 @@
 .header-title img {
   width: 100%;
   height: auto;
+  max-height: 6vh;
+  object-fit: contain;
   display: block;
 }
 
@@ -245,6 +247,8 @@
   .header-center {
     flex: 1;
     align-items: center;
+    padding-top: 0;
+    justify-content: center;
   }
 
   .header-title {
