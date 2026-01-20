@@ -71,7 +71,7 @@ p {
 /* Lead paragraph - larger text for introductions */
 .lead {
   font-size: var(--font-size-large);
-  line-height: var(--line-height-relaxed);
+  line-height: var(--line-height-normal);
   margin-bottom: var(--spacing-lg);
 }
 

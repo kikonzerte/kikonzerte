@@ -89,13 +89,13 @@
 
 .event-date {
   color: var(--color-white);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-normal);
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
   transition: color var(--transition-fast);
   flex-shrink: 0;
-  margin: 0 0 6px 0;
+  margin: 0 0 20px 0;
 }
 
 .event-date:hover {
@@ -104,24 +104,24 @@
 
 .event-artists {
   color: var(--color-white);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-normal);
   font-style: italic;
+  line-height: 1.6rem;
   flex-shrink: 0;
-  margin: 0 0 8px 0;
+  margin: 0 0 20px 0;
 }
 
 .event-description {
   color: var(--color-white);
-  font-size: var(--font-size-small);
-  line-height: 1.45;
+  font-size: var(--font-size-normal);
+    line-height: 1.6rem;
   white-space: pre-line;
   margin: 0 0 8px 0;
 }
 
 .event-footer {
   color: var(--color-white);
-  font-size: var(--font-size-small);
-  line-height: 1.35;
+  font-size: var(--font-size-normal);
   white-space: pre-line;
   margin-top: auto;
   padding-top: 8px;
@@ -141,7 +141,7 @@
   display: flex;
   justify-content: center;
   gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-md);
 }
 
 @media (max-width: 768px) {
@@ -213,17 +213,17 @@
   }
   
   .event-title {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   
   .event-date,
   .event-artists {
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     font-size: var(--font-size-normal);
   }
   
   .event-description {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-size: var(--font-size-normal);
   }
   
