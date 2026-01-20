@@ -1,0 +1,162 @@
+/* ============================================
+   Footer Styles
+   ============================================ */
+
+.site-footer {
+  padding: var(--spacing-3xl) 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+}
+
+/* ==================== Contact Section ==================== */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+  text-align: center;
+  order: 2; /* On mobile, contact section is below newsletter */
+}
+
+.footer-logo {
+  width: 120px;
+  height: auto;
+}
+
+.footer-contact-info h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-h3);
+}
+
+.footer-address {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+/* ==================== Newsletter Section ==================== */
+
+.footer-newsletter {
+  order: 1; /* On mobile, newsletter is on top */
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: transparent;
+  border-radius: var(--border-radius-md);
+}
+
+.newsletter-form h3 {
+  margin: 0;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-h3);
+  white-space: nowrap;
+}
+
+.newsletter-form p {
+  margin: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.form-container input[type="email"] {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-grey);
+  color: var(--color-black);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-normal);
+  font-family: var(--font-body);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container input[type="email"]::placeholder {
+  color: rgba(33, 32, 32, 0.5);
+}
+
+.form-container input[type="email"]:focus {
+  outline: none;
+  border-color: var(--color-orange);
+}
+
+.form-container button {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: var(--btn-border-width) solid var(--color-white);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-body);
+  width: 100%;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.form-container button:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* ==================== Desktop Layout ==================== */
+
+@media (min-width: 769px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+  }
+
+  .footer-contact {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--spacing-xl);
+    order: 1; /* On desktop, contact is on left */
+  }
+
+  .footer-contact-info {
+    text-align: left;
+  }
+
+  .footer-newsletter {
+    order: 2; /* On desktop, newsletter is on right */
+  }
+
+  .newsletter-form {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+  }
+
+  .form-container {
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    max-width: 100%;
+  }
+
+  .form-container input[type="email"] {
+    flex: 1;
+  }
+
+  .form-container button {
+    width: auto;
+  }
+}
