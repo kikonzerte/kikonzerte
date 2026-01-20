@@ -147,8 +147,7 @@ a {
   transition: color var(--transition-fast);
 }
 
-a:hover,
-a:focus {
+a:hover {
   color: var(--color-dark-blue);
 }
 

@@ -38,8 +38,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.preset-1 .btn:hover,
-.preset-1 .btn:focus {
+.preset-1 .btn:hover {
   background-color: var(--color-dark-blue);
   border: var(--btn-border-width) solid var(--color-white);
 }
@@ -81,8 +80,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.preset-2 .btn:hover,
-.preset-2 .btn:focus {
+.preset-2 .btn:hover {
   background-color: var(--color-dark-blue);
   border: var(--btn-border-width) solid var(--color-white);
 }
@@ -124,8 +122,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.preset-3 .btn:hover,
-.preset-3 .btn:focus {
+.preset-3 .btn:hover {
   background-color: var(--color-white);
   border: var(--btn-border-width) solid var(--color-white);
   color: var(--color-dark-blue);
@@ -168,8 +165,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.preset-4 .btn:hover,
-.preset-4 .btn:focus {
+.preset-4 .btn:hover {
   background-color: var(--color-white);
   border: var(--btn-border-width) solid var(--color-white);
   color: var(--color-black);
@@ -212,8 +208,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.preset-5 .btn:hover,
-.preset-5 .btn:focus {
+.preset-5 .btn:hover {
   background-color: var(--color-white);
   border: var(--btn-border-width) solid var(--color-white);
   color: var(--color-dark-blue);

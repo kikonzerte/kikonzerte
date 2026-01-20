@@ -21,8 +21,7 @@
 }
 
 .btn:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+  outline: none;
 }
 
 /* Button Sizes */
