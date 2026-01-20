@@ -81,7 +81,7 @@ function updateThumbnails() {
   // Number of thumbnails to show (should be odd for symmetry)
   // Adjust based on screen size
   const isMobile = window.innerWidth <= 768;
-  const numVisible = isMobile ? 5 : 7;
+  const numVisible = isMobile ? 5 : 9;
   const halfVisible = Math.floor(numVisible / 2);
   
   // Calculate which thumbnails to show (linear, no wrapping)
