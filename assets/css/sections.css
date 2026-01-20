@@ -300,23 +300,9 @@
   gap: var(--spacing-sm);
   justify-content: center;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow: hidden;
   padding: var(--spacing-sm) 0;
   margin-bottom: var(--spacing-lg);
-  scrollbar-width: thin;
-}
-
-.gallery-thumbnails::-webkit-scrollbar {
-  height: 4px;
-}
-
-.gallery-thumbnails::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.gallery-thumbnails::-webkit-scrollbar-thumb {
-  background: var(--color-orange);
-  border-radius: 2px;
 }
 
 .gallery-thumbnail {
@@ -399,9 +385,13 @@
     max-height: 600px;
   }
   
+  .gallery-thumbnails {
+    gap: var(--spacing-xs);
+  }
+  
   .gallery-thumbnail {
-    width: 80px;
-    height: 60px;
+    width: 70px;
+    height: 50px;
   }
   
   .gallery-nav-btn {

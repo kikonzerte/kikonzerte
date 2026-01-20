@@ -65,54 +65,44 @@ function showImage(index) {
   updateNavButtons();
 }
 
-// Create thumbnail elements with duplicates for centering
+// Create thumbnail elements (cyclical display)
 function createThumbnails() {
+  // Initial render will be done by updateThumbnails
+}
+
+// Update thumbnails to show cyclical view around current image
+function updateThumbnails() {
   const container = document.getElementById('gallery-thumbnails');
   container.innerHTML = '';
   
-  const numClones = 5; // Number of images to clone on each side for centering
+  // Number of thumbnails to show (should be odd for symmetry)
+  // Adjust based on screen size
+  const isMobile = window.innerWidth <= 768;
+  const numVisible = isMobile ? 5 : 7;
+  const halfVisible = Math.floor(numVisible / 2);
   
-  // Add clones at the beginning (last images)
-  for (let i = galleryImages.length - numClones; i < galleryImages.length; i++) {
-    const thumb = document.createElement('div');
-    thumb.className = 'gallery-thumbnail gallery-thumbnail-clone';
-    thumb.innerHTML = `<img src="${galleryImages[i]}" alt="Gallery thumbnail clone" />`;
-    thumb.addEventListener('click', () => showImage(i));
-    container.appendChild(thumb);
-  }
-  
-  // Add main thumbnails
-  galleryImages.forEach((imagePath, index) => {
+  // Calculate which thumbnails to show (cyclical)
+  for (let i = -halfVisible; i <= halfVisible; i++) {
+    let imageIndex = currentIndex + i;
+    
+    // Wrap around cyclically
+    if (imageIndex < 0) {
+      imageIndex = galleryImages.length + imageIndex;
+    } else if (imageIndex >= galleryImages.length) {
+      imageIndex = imageIndex - galleryImages.length;
+    }
+    
     const thumb = document.createElement('div');
     thumb.className = 'gallery-thumbnail';
-    thumb.setAttribute('data-index', index);
-    thumb.innerHTML = `<img src="${imagePath}" alt="Gallery thumbnail ${index + 1}" />`;
-    thumb.addEventListener('click', () => showImage(index));
+    
+    // Mark the center/active thumbnail
+    if (i === 0) {
+      thumb.classList.add('active');
+    }
+    
+    thumb.innerHTML = `<img src="${galleryImages[imageIndex]}" alt="Gallery thumbnail ${imageIndex + 1}" />`;
+    thumb.addEventListener('click', () => showImage(imageIndex));
     container.appendChild(thumb);
-  });
-  
-  // Add clones at the end (first images)
-  for (let i = 0; i < numClones; i++) {
-    const thumb = document.createElement('div');
-    thumb.className = 'gallery-thumbnail gallery-thumbnail-clone';
-    thumb.innerHTML = `<img src="${galleryImages[i]}" alt="Gallery thumbnail clone" />`;
-    thumb.addEventListener('click', () => showImage(i));
-    container.appendChild(thumb);
-  }
-}
-
-// Update active thumbnail
-function updateThumbnails() {
-  // Remove active class from all thumbnails
-  const allThumbnails = document.querySelectorAll('.gallery-thumbnail');
-  allThumbnails.forEach(thumb => thumb.classList.remove('active'));
-  
-  // Find and activate the main thumbnail (not clone)
-  const mainThumbnail = document.querySelector(`.gallery-thumbnail[data-index="${currentIndex}"]`);
-  if (mainThumbnail) {
-    mainThumbnail.classList.add('active');
-    // Scroll thumbnail into center of view
-    mainThumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   }
 }
 
