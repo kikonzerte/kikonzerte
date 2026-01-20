@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
 </head>
 <body>
   <!-- Skip to main content for accessibility -->
@@ -109,9 +110,19 @@
       </div>
     </section>
 
-    <section id="upcoming" class="section preset-2">
+    <!-- Upcoming Events Section -->
+    <section id="upcoming" class="section preset-5">
       <div class="container">
-        <h2>DEMNÄCHST</h2>
+        <div class="section-header">
+          <h2>DEMNÄCHST</h2>
+        </div>
+        <div id="events-container" class="events-grid">
+          <!-- Events will be loaded dynamically from events.json -->
+          <p class="loading-message">Lade Konzerte...</p>
+        </div>
+        <div class="section-footer">
+          <a href="konzertarchiv.html" class="btn btn-orange btn-lg">KONZERTARCHIV</a>
+        </div>
       </div>
     </section>
 
@@ -129,5 +140,6 @@
   </main>
 
   <script src="assets/js/header.js"></script>
+  <script src="assets/js/events.js"></script>
 </body>
 </html>
