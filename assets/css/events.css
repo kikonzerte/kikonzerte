@@ -183,7 +183,7 @@
 /* Mobile: Full width cards */
 @media (max-width: 768px) {
   .event-card {
-    width: calc(100vw - var(--spacing-sm) * 2);
+    width: calc(100vw - var(--spacing-lg) * 2);
     max-width: none;
     min-width: auto;
     min-height: 800px;
@@ -191,15 +191,19 @@
     margin-left: 0;
   }
   
+  .event-card:first-child {
+    margin-left: var(--spacing-lg);
+  }
+  
   .event-card:last-child {
-    margin-right: 0;
+    margin-right: var(--spacing-lg);
   }
   
   .events-grid {
     gap: var(--spacing-md);
     justify-content: flex-start;
     scroll-padding-left: 0;
-    scroll-padding-inline: var(--spacing-sm);
+    scroll-padding-inline: 0;
   }
   
   .event-image {
