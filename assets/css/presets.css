@@ -246,6 +246,34 @@
   color: var(--color-white);
 }
 
+/* Event cards in preset-5: Override preset-5 colors for event cards */
+.preset-5 .event-card {
+  background-color: var(--color-black);
+}
+
+.preset-5 .event-card .event-title {
+  color: var(--color-orange);
+}
+
+.preset-5 .event-card .event-date,
+.preset-5 .event-card .event-artists,
+.preset-5 .event-card .event-description,
+.preset-5 .event-card .event-footer {
+  color: var(--color-white);
+}
+
+.preset-5 .event-card .btn {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border: var(--btn-border-width) solid var(--color-white);
+}
+
+.preset-5 .event-card .btn:hover {
+  background-color: var(--color-white);
+  color: var(--color-orange);
+  border: var(--btn-border-width) solid var(--color-white);
+}
+
 /* ==================== Preset Utilities ==================== */
 
 /* Override heading color within a preset */
