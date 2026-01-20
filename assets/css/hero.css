@@ -57,6 +57,8 @@
 .hero-btn-right {
   white-space: normal;
   line-height: 1.4;
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
 }
 
 /* Desktop: Buttons on left and right (over curtains) */
