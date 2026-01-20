@@ -6,22 +6,20 @@
 .events-carousel {
   position: relative;
   width: 100%;
-  margin-left: calc(-1 * var(--container-padding));
-  margin-right: calc(-1 * var(--container-padding));
 }
 
 /* Event Grid Layout - Horizontal Scroll */
 .events-grid {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: var(--spacing-md);
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
 }
@@ -44,27 +42,26 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  width: calc((100vw - var(--spacing-lg) * 1.33) / 2.33); /* About 2.33 cards visible */
-  max-width: 420px;
-  min-width: 300px;
-  height: 85vh;
-  max-height: 900px;
-  min-height: 700px;
+  width: calc((100vw - var(--spacing-md) * 3.33) / 2.33); /* About 2.33 cards visible */
+  max-width: 450px;
+  min-width: 320px;
+  height: auto;
+  min-height: 950px;
   scroll-snap-align: start;
 }
 
 .event-image {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
   flex-shrink: 0;
 }
 
 .event-content {
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: 0;
   flex-grow: 1;
   overflow: hidden;
 }
@@ -73,10 +70,10 @@
   font-family: var(--font-heading);
   font-size: var(--font-size-lg);
   color: var(--color-orange);
-  margin: 0;
+  margin: 0 0 6px 0;
   text-transform: uppercase;
   flex-shrink: 0;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .event-date {
@@ -85,7 +82,7 @@
   cursor: pointer;
   transition: color var(--transition-fast);
   flex-shrink: 0;
-  margin-top: var(--spacing-xs);
+  margin: 0 0 6px 0;
 }
 
 .event-date:hover {
@@ -97,32 +94,32 @@
   font-size: var(--font-size-small);
   font-style: italic;
   flex-shrink: 0;
-  margin-top: var(--spacing-xs);
+  margin: 0 0 8px 0;
 }
 
 .event-description {
   color: var(--color-white);
   font-size: var(--font-size-small);
-  line-height: 1.4;
+  line-height: 1.35;
   white-space: pre-line;
-  margin-top: var(--spacing-xs);
+  margin: 0 0 8px 0;
 }
 
 .event-footer {
   color: var(--color-white);
   font-size: var(--font-size-small);
-  line-height: 1.4;
+  line-height: 1.35;
   white-space: pre-line;
   margin-top: auto;
-  padding-top: var(--spacing-sm);
+  padding-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
 }
 
 .event-actions {
   display: flex;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-sm);
+  gap: var(--spacing-xs);
+  margin-top: 8px;
   flex-shrink: 0;
 }
 
@@ -166,41 +163,48 @@
 
 /* Mobile: Full width cards */
 @media (max-width: 768px) {
-  .events-carousel {
-    margin-left: calc(-1 * var(--spacing-md));
-    margin-right: calc(-1 * var(--spacing-md));
-  }
-  
   .event-card {
-    width: calc(100vw - var(--spacing-md) - var(--spacing-lg));
+    width: calc(100vw - var(--spacing-md) * 2);
     max-width: none;
     min-width: auto;
-    height: 75vh;
-    min-height: 600px;
-    max-height: 750px;
+    min-height: 800px;
   }
   
   .events-grid {
-    gap: var(--spacing-md);
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    gap: var(--spacing-sm);
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
   }
   
   .event-image {
-    height: 180px;
+    height: 160px;
   }
   
   .event-content {
-    padding: var(--spacing-sm);
-    gap: var(--spacing-xs);
+    padding: var(--spacing-xs);
   }
   
   .event-title {
     font-size: var(--font-size-base);
+    margin-bottom: 4px;
+  }
+  
+  .event-date,
+  .event-artists {
+    margin-bottom: 4px;
+  }
+  
+  .event-description {
+    margin-bottom: 6px;
+  }
+  
+  .event-footer {
+    padding-top: 6px;
   }
   
   .event-actions {
     flex-direction: column;
+    margin-top: 6px;
   }
   
   .event-actions .btn {
