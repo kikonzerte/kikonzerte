@@ -43,8 +43,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.btn-orange:hover,
-.btn-orange:focus {
+.btn-orange:hover {
   background-color: var(--color-dark-blue);
   border: var(--btn-border-width) solid var(--color-white);
   color: var(--color-white);
@@ -57,8 +56,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.btn-orange-outline:hover,
-.btn-orange-outline:focus {
+.btn-orange-outline:hover {
   background-color: var(--color-orange);
   color: var(--color-white);
   border: var(--btn-border-width) solid var(--color-white);
@@ -71,8 +69,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.btn-blue:hover,
-.btn-blue:focus {
+.btn-blue:hover {
   background-color: var(--color-orange);
   border: var(--btn-border-width) solid var(--color-white);
   color: var(--color-white);
@@ -85,8 +82,7 @@
   border: var(--btn-border-width) solid var(--color-white);
 }
 
-.btn-white:hover,
-.btn-white:focus {
+.btn-white:hover {
   background-color: var(--color-orange);
   color: var(--color-white);
   border: var(--btn-border-width) solid var(--color-white);
