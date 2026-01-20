@@ -52,11 +52,18 @@
   padding: 0 var(--spacing-lg);
 }
 
+/* Hero buttons allow line breaks */
+.hero-btn-left,
+.hero-btn-right {
+  white-space: normal;
+  line-height: 1.4;
+}
+
 /* Desktop: Buttons on left and right (over curtains) */
 @media (min-width: 769px) {
   .hero-buttons {
     justify-content: space-between;
-    padding: 0 10%; /* Adjust this to position buttons over the curtains */
+    padding: 0 3%; /* Closer to edges for curtain positioning */
   }
   
   .hero-btn-left {
@@ -65,6 +72,13 @@
   
   .hero-btn-right {
     /* Position over right curtain */
+  }
+}
+
+/* Large screens - even closer to edges */
+@media (min-width: 1200px) {
+  .hero-buttons {
+    padding: 0 2%;
   }
 }
 
@@ -90,7 +104,7 @@
 /* Tablet adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero-buttons {
-    padding: 0 5%;
+    padding: 0 4%;
   }
 }
 
