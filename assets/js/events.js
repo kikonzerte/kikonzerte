@@ -76,6 +76,57 @@ function renderEventCard(event) {
   return card;
 }
 
+// Carousel navigation functions
+function scrollCarousel(direction) {
+  const container = document.getElementById('events-container');
+  const cardWidth = container.querySelector('.event-card')?.offsetWidth || 0;
+  const gap = parseInt(getComputedStyle(container).gap) || 0;
+  const scrollAmount = cardWidth + gap;
+  
+  if (direction === 'left') {
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  } else {
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
+}
+
+// Update navigation button states
+function updateNavButtons() {
+  const container = document.getElementById('events-container');
+  const prevBtn = document.getElementById('events-prev');
+  const nextBtn = document.getElementById('events-next');
+  
+  if (!prevBtn || !nextBtn || !container) return;
+  
+  // Check if at start
+  prevBtn.disabled = container.scrollLeft <= 0;
+  
+  // Check if at end
+  const maxScroll = container.scrollWidth - container.clientWidth;
+  nextBtn.disabled = container.scrollLeft >= maxScroll - 1; // -1 for rounding errors
+}
+
+// Initialize carousel navigation
+function initCarouselNav() {
+  const container = document.getElementById('events-container');
+  const prevBtn = document.getElementById('events-prev');
+  const nextBtn = document.getElementById('events-next');
+  
+  if (!container || !prevBtn || !nextBtn) return;
+  
+  // Add event listeners
+  prevBtn.addEventListener('click', () => scrollCarousel('left'));
+  nextBtn.addEventListener('click', () => scrollCarousel('right'));
+  
+  // Update button states on scroll
+  container.addEventListener('scroll', updateNavButtons);
+  
+  // Update initial state
+  updateNavButtons();
+  
+  // Touch/swipe support (already handled by CSS scroll-snap)
+}
+
 // Function to load and display events
 async function loadEvents() {
   const container = document.getElementById('events-container');
@@ -96,6 +147,9 @@ async function loadEvents() {
       data.upcoming.forEach(event => {
         container.appendChild(renderEventCard(event));
       });
+      
+      // Initialize navigation after cards are loaded
+      setTimeout(initCarouselNav, 100);
     } else {
       container.innerHTML = '<p class="loading-message">Zurzeit sind keine Konzerte geplant. Schauen Sie bald wieder vorbei!</p>';
     }
