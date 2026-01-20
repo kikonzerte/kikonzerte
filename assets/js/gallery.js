@@ -63,6 +63,9 @@ function showImage(index) {
   
   // Update navigation buttons
   updateNavButtons();
+  
+  // Update counter
+  updateCounter();
 }
 
 // Create thumbnail elements (cyclical display)
@@ -70,7 +73,7 @@ function createThumbnails() {
   // Initial render will be done by updateThumbnails
 }
 
-// Update thumbnails to show cyclical view around current image
+// Update thumbnails to show linear view around current image (no wrapping)
 function updateThumbnails() {
   const container = document.getElementById('gallery-thumbnails');
   container.innerHTML = '';
@@ -81,15 +84,17 @@ function updateThumbnails() {
   const numVisible = isMobile ? 5 : 7;
   const halfVisible = Math.floor(numVisible / 2);
   
-  // Calculate which thumbnails to show (cyclical)
+  // Calculate which thumbnails to show (linear, no wrapping)
   for (let i = -halfVisible; i <= halfVisible; i++) {
     let imageIndex = currentIndex + i;
     
-    // Wrap around cyclically
-    if (imageIndex < 0) {
-      imageIndex = galleryImages.length + imageIndex;
-    } else if (imageIndex >= galleryImages.length) {
-      imageIndex = imageIndex - galleryImages.length;
+    // Check if this index is valid (no wrapping)
+    if (imageIndex < 0 || imageIndex >= galleryImages.length) {
+      // Create empty placeholder
+      const thumb = document.createElement('div');
+      thumb.className = 'gallery-thumbnail gallery-thumbnail-empty';
+      container.appendChild(thumb);
+      continue;
     }
     
     const thumb = document.createElement('div');
@@ -129,21 +134,21 @@ function setupNavigation() {
   nextBtn.addEventListener('click', () => navigateNext());
 }
 
-// Navigate to previous image (cyclical)
+// Navigate to previous image (linear with wrap)
 function navigatePrevious() {
   const newIndex = currentIndex - 1;
   if (newIndex < 0) {
-    showImage(galleryImages.length - 1); // Wrap to end
+    showImage(galleryImages.length - 1); // Wrap to last image
   } else {
     showImage(newIndex);
   }
 }
 
-// Navigate to next image (cyclical)
+// Navigate to next image (linear with wrap back to start)
 function navigateNext() {
   const newIndex = currentIndex + 1;
   if (newIndex >= galleryImages.length) {
-    showImage(0); // Wrap to beginning
+    showImage(0); // Restart at beginning
   } else {
     showImage(newIndex);
   }
@@ -203,6 +208,14 @@ function handleSwipe() {
       // Swiped right - show previous image
       navigatePrevious();
     }
+  }
+}
+
+// Update counter display
+function updateCounter() {
+  const counter = document.querySelector('.gallery-counter');
+  if (counter) {
+    counter.textContent = `${currentIndex + 1} von ${galleryImages.length}`;
   }
 }
 
