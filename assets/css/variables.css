@@ -65,9 +65,9 @@
   --btn-border-width: 2px;
 
   /* ==================== Transitions ==================== */
-  --transition-fast: 150ms ease-in-out;
-  --transition-normal: 300ms ease-in-out;
-  --transition-slow: 500ms ease-in-out;
+  --transition-fast: 10ms ease-in-out;
+  --transition-normal: 100ms ease-in-out;
+  --transition-slow: 250ms ease-in-out;
 
   /* ==================== Shadows ==================== */
   --shadow-sm: 0 2px 4px rgba(33, 32, 32, 0.1);
