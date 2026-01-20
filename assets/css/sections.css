@@ -50,6 +50,68 @@
   }
 }
 
+/* ==================== Stage Section ==================== */
+
+.stage-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+.stage-image {
+  width: 100%;
+}
+
+.stage-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius-sm);
+}
+
+.stage-text h2 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.stage-text p {
+  margin-bottom: var(--spacing-md);
+}
+
+.stage-text p:last-of-type {
+  margin-bottom: var(--spacing-lg);
+}
+
+.stage-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+/* Mobile: Image on top, then text */
+@media (max-width: 768px) {
+  .stage-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .stage-image {
+    order: -1; /* Image first */
+  }
+  
+  .stage-text {
+    order: 1; /* Text second */
+  }
+  
+  .stage-buttons {
+    flex-direction: column;
+  }
+  
+  .stage-buttons .btn {
+    width: 100%;
+  }
+}
+
 /* ==================== Section Layout Utilities ==================== */
 
 .section-header {
@@ -68,7 +130,7 @@
   }
   
   .section-footer {
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-xl);
   }
 }
 
