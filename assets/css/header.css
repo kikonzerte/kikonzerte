@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: 0 var(--spacing-lg);
   height: 100%;
   position: relative;
 }
@@ -54,7 +54,8 @@
 .header-center {
   justify-content: center;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: 0;
+  padding-top: var(--spacing-sm);
 }
 
 .header-right {
@@ -67,7 +68,7 @@
   display: block;
   max-width: 550px;
   width: 100%;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: 0;
 }
 
 .header-title img {
@@ -103,7 +104,7 @@
 .header-nav {
   display: flex;
   gap: var(--spacing-lg);
-  margin-top: var(--spacing-sm);
+  margin-top: 0;
 }
 
 .header-nav a {
