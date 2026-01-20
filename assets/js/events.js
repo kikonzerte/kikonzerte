@@ -65,15 +65,8 @@ function processEvent(event) {
     event.date = parseDateFromDisplay(event.dateDisplay);
   }
   
-  // Process image path
-  if (!event.image) {
-    // No image provided - auto-lookup by date
-    event.image = findImageByDate(event.dateDisplay);
-  } else if (!event.image.includes('/')) {
-    // Image is just a filename - add path prefix
-    event.image = `assets/img/upcoming/${event.image}`;
-  }
-  // else: image already has full path, use as-is
+  // Image is required - no auto-lookup
+  // Just ensure it's provided in the JSON
   
   return event;
 }

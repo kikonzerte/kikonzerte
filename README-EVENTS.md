@@ -10,6 +10,7 @@
 {
   "title": "Your Event Title",
   "dateDisplay": "So, 29.03.26, 17:00",
+  "image": "assets/img/upcoming/26-03-29.jpg",
   "artists": "Artist Name - Instrument",
   "description": "Event description.\n\nUse \\n\\n for paragraph breaks.",
   "footer": "Eintritt frei – Kollekte.\n\nAnmeldung empfohlen. Erstbesucher:innen für die Wegbeschreibung unbedingt anmelden!"
@@ -32,17 +33,17 @@
 |-------|-------------|---------|
 | `title` | Event title | `"UN:VERBUNDEN"` |
 | `dateDisplay` | Date in German format | `"So, 29.03.26, 17:00"` |
+| `image` | Full image path | `"assets/img/upcoming/26-03-29.jpg"` |
 | `artists` | Performing artists | `"Elena Schneider - Mezzosopran"` |
 | `description` | Event description | `"Description text..."` |
 | `footer` | Pricing & registration info | `"Eintritt frei – Kollekte..."` |
 
-### Optional Fields
+### Auto-Generated Fields (Never Need to Specify)
 
-| Field | Description | When to Use |
-|-------|-------------|-------------|
-| `image` | Image filename | Only if you want to override auto-lookup. Just provide filename: `"26-03-29.jpg"` |
-| `id` | Unique identifier | Never needed - auto-generated from title |
-| `date` | ISO date string | Never needed - auto-parsed from `dateDisplay` |
+| Field | Description | Generated From |
+|-------|-------------|----------------|
+| `id` | Unique identifier | Auto-generated from title |
+| `date` | ISO date string | Auto-parsed from `dateDisplay` |
 
 ---
 
@@ -60,12 +61,6 @@ The system automatically generates these fields for you:
 - Parses German date format: `"So, 29.03.26, 17:00"`
 - Converts to ISO format: `"2026-03-29T17:00:00"`
 - Used for calendar downloads
-
-### 3. **Image** (from dateDisplay)
-- Extracts date: `"So, 29.03.26, 17:00"` → `29.03.26`
-- Formats as: `YY-MM-DD.jpg` → `26-03-29.jpg`
-- Looks in: `assets/img/upcoming/26-03-29.jpg`
-- **Image Naming Convention**: Name your images as `YY-MM-DD.jpg` (e.g., `26-03-29.jpg`)
 
 ---
 
@@ -232,13 +227,13 @@ Name images using the date pattern: `YY-MM-DD` with file extension
 ### Upload Location
 Place images in: `assets/img/upcoming/`
 
-### Manual Override
-If you need a different image name, specify it:
+### Custom Image Names
+Simply provide the full path:
 ```json
 {
   "title": "Special Event",
   "dateDisplay": "So, 29.03.26, 17:00",
-  "image": "special-poster.jpg",
+  "image": "assets/img/upcoming/special-poster.jpg",
   ...
 }
 ```
@@ -343,25 +338,13 @@ After editing `events.json`, you can validate it:
 
 ```
 ┌─────────────────────────────────────────────────┐
-│  MINIMAL EVENT (Auto-generates id, date, image) │
+│  STANDARD EVENT (Auto-generates id and date)    │
 └─────────────────────────────────────────────────┘
 
 {
   "title": "Concert Title",
   "dateDisplay": "So, 29.03.26, 17:00",
-  "artists": "Artist - Instrument",
-  "description": "Description text.",
-  "footer": "Eintritt frei – Kollekte."
-}
-
-┌─────────────────────────────────────────────────┐
-│  FULL EVENT (All fields specified)              │
-└─────────────────────────────────────────────────┘
-
-{
-  "title": "Concert Title",
-  "dateDisplay": "So, 29.03.26, 17:00",
-  "image": "custom-image.jpg",
+  "image": "assets/img/upcoming/26-03-29.jpg",
   "artists": "Artist - Instrument",
   "description": "Description text.",
   "footer": "Eintritt frei – Kollekte."
