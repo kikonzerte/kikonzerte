@@ -6,12 +6,12 @@
 .events-carousel {
   position: relative;
   width: 100%;
+
 }
 
 /* Event Grid Layout - Horizontal Scroll */
 .events-grid {
   display: flex;
-  gap: var(--spacing-md);
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -44,7 +44,7 @@
 /* Event Card - Tall and Narrow, Fixed Height */
 .event-card {
   background-color: var(--color-black);
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@
 
 .event-image {
   width: 100%;
-  height: 200px;
+  height:fit-content
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -73,17 +73,16 @@
   padding: var(--spacing-sm);
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 5px;
   flex-grow: 1;
   overflow: hidden;
 }
 
 .event-title {
   font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
+  font-size: 2rem;
   color: var(--color-orange);
   margin: 0 0 6px 0;
-  text-transform: uppercase;
   flex-shrink: 0;
   line-height: 1.1;
 }
@@ -91,6 +90,8 @@
 .event-date {
   color: var(--color-white);
   font-size: var(--font-size-small);
+  font-weight: bold;
+  text-decoration: underline;
   cursor: pointer;
   transition: color var(--transition-fast);
   flex-shrink: 0;
@@ -112,7 +113,7 @@
 .event-description {
   color: var(--color-white);
   font-size: var(--font-size-small);
-  line-height: 1.35;
+  line-height: 1.45;
   white-space: pre-line;
   margin: 0 0 8px 0;
 }
@@ -143,6 +144,12 @@
   margin-top: var(--spacing-xl);
 }
 
+@media (max-width: 768px) {
+  .events-nav {
+    margin-top: var(--spacing-md);
+  }
+}
+
 .events-nav-btn {
   background-color: transparent;
   border: var(--btn-border-width) solid var(--color-dark-blue);
@@ -159,7 +166,7 @@
 }
 
 .events-nav-btn:hover {
-  background-color: var(--color-dark-blue);
+  background-color: var(--color-black);
   color: var(--color-white);
 }
 
@@ -176,22 +183,27 @@
 /* Mobile: Full width cards */
 @media (max-width: 768px) {
   .event-card {
-    width: calc(100vw - var(--spacing-lg) * 2);
+    width: calc(100vw - var(--spacing-sm) * 2);
     max-width: none;
     min-width: auto;
     min-height: 800px;
     scroll-snap-align: center;
+    margin-left: 0;
+  }
+  
+  .event-card:last-child {
+    margin-right: 0;
   }
   
   .events-grid {
     gap: var(--spacing-md);
     justify-content: flex-start;
     scroll-padding-left: 0;
-    scroll-padding-inline: calc(50vw - (100vw - var(--spacing-lg) * 2) / 2);
+    scroll-padding-inline: var(--spacing-sm);
   }
   
   .event-image {
-    height: 160px;
+    height: fit-content;
   }
   
   .event-content {
@@ -199,21 +211,23 @@
   }
   
   .event-title {
-    font-size: var(--font-size-base);
     margin-bottom: 4px;
   }
   
   .event-date,
   .event-artists {
     margin-bottom: 4px;
+    font-size: var(--font-size-normal);
   }
   
   .event-description {
     margin-bottom: 6px;
+    font-size: var(--font-size-normal);
   }
   
   .event-footer {
     padding-top: 6px;
+    font-size: var(--font-size-normal);
   }
   
   .event-actions {

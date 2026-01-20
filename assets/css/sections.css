@@ -62,4 +62,14 @@
   margin-top: var(--spacing-2xl);
 }
 
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .section-footer {
+    margin-top: var(--spacing-md);
+  }
+}
+
 /* ==================== Other Sections (To be added) ==================== */
