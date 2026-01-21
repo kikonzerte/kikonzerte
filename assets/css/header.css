@@ -56,7 +56,7 @@
   flex-direction: column;
   gap: clamp(var(--spacing-xs), 1.2vh, var(--spacing-lg));
   padding-top: 1vh;
-  padding-bottom: 1vh:
+  padding-bottom: 0.2vh;
 }
 
 .header-right {

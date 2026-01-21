@@ -66,13 +66,14 @@
 @media (min-width: 769px) {
   .btn-lg {
     font-size: clamp(1.2rem, 1.6vw, 8rem);
-    padding: clamp(var(--spacing-sm), 0.5vw, var(--spacing-3xl));
+    padding: clamp(var(--spacing-sm), 0.5vw, var(--spacing-3xl)) clamp(var(--spacing-sm), 1.5vw, var(--spacing-3xl));
   }
     
   .hero-buttons {
     justify-content: space-between;
     padding: 0 3vw; /* Closer to edges for curtain positioning */
   }
+}
 
 /* Large screens - even closer to edges */
 @media (min-width: 1400px) {
@@ -80,6 +81,7 @@
     padding: 0 5vw;
   }
 }
+
 
 /* Mobile: Buttons stacked vertically */
 @media (max-width: 768px) {
@@ -90,11 +92,6 @@
 
   .hero-image img {
     object-position: bottom;
-  }
-
-  .btn-lg {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: var(--font-size-large);
   }
 
   .hero-buttons {
