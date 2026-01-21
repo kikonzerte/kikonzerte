@@ -35,6 +35,11 @@
   font-size: var(--font-size-large);
 }
 
+.btn-hero {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 3rem;
+}
+
 /* Orange Button (Primary) */
 .btn-orange {
   background-color: var(--color-orange);

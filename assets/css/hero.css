@@ -60,21 +60,19 @@
   border-radius: 30px;
 }
 
+
+
 /* Desktop: Buttons on left and right (over curtains) */
 @media (min-width: 769px) {
+  .btn-lg {
+    font-size: clamp(1.2rem, 1.6vw, 8rem);
+    padding: clamp(var(--spacing-sm), 0.5vw, var(--spacing-3xl));
+  }
+    
   .hero-buttons {
     justify-content: space-between;
-    padding: 0 4vw; /* Closer to edges for curtain positioning */
+    padding: 0 3vw; /* Closer to edges for curtain positioning */
   }
-  
-  .hero-btn-left {
-    /* Position over left curtain */
-  }
-  
-  .hero-btn-right {
-    /* Position over right curtain */
-  }
-}
 
 /* Large screens - even closer to edges */
 @media (min-width: 1400px) {
@@ -86,7 +84,12 @@
 /* Mobile: Buttons stacked vertically */
 @media (max-width: 768px) {
   .hero {
+    height: 80vh;
     min-height: 600px; /* Increased minimum for stacked buttons */
+  }
+
+  .hero-image img {
+    object-position: bottom;
   }
 
   .hero-buttons {
