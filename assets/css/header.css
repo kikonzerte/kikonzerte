@@ -41,17 +41,18 @@
 .header-left,
 .header-center,
 .header-right {
-  flex: 1;
   display: flex;
   align-items: center;
 }
 
 .header-left {
+  flex: 0 1 auto;
   justify-content: flex-start;
   gap: var(--spacing-sm);
 }
 
 .header-center {
+  flex: 1 1 auto;
   justify-content: center;
   flex-direction: column;
   gap: clamp(var(--spacing-xs), 1.2vh, var(--spacing-lg));
@@ -60,6 +61,7 @@
 }
 
 .header-right {
+  flex: 0 1 auto;
   justify-content: flex-end;
 }
 
@@ -72,10 +74,11 @@
 }
 
 .header-title img {
-  width: 100%;
+  width: clamp(28rem, 40vw, 80rem);
   height: auto;
   object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
 /* ==================== Social Icons ==================== */
@@ -109,7 +112,7 @@
 
 .header-nav a {
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 1vw, 5rem);
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
   font-weight: var(--font-weight-bold);
   color: var(--color-dark-blue);
   text-decoration: none;
@@ -272,6 +275,13 @@
   .site-header {
     height: clamp(90px, 6.6vw, 300px);
   }
+
+  .header-title img {
+  width: clamp(28rem, 50vw, 100rem);
+  }
+
+  .header-nav a {
+  font-size: clamp(1.2rem, 1.5vw, 3rem);
 }
 
 @media (max-width: 992px) {
@@ -281,10 +291,6 @@
 
   .header-nav {
     gap: var(--spacing-md);
-  }
-  
-  .header-title {
-    max-width: 800px;
   }
   
   .social-icon {
@@ -327,10 +333,6 @@
     justify-content: center;
   }
 
-  .header-title {
-    max-width: 450px;
-  }
-
   .header-right {
     flex: 0;
   }
@@ -345,9 +347,5 @@
 @media (max-width: 480px) {
   .header-overlay {
     padding: var(--spacing-xs) var(--spacing-sm);
-  }
-
-  .header-title {
-    max-width: 300px;
   }
 }
