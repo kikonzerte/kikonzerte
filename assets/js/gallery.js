@@ -105,7 +105,7 @@ function updateThumbnails() {
       thumb.classList.add('active');
     }
     
-    thumb.innerHTML = `<img src="${galleryImages[imageIndex]}" alt="Gallery thumbnail ${imageIndex + 1}" />`;
+    thumb.innerHTML = `<img src="${galleryImages[imageIndex]}" alt="Gallery thumbnail ${imageIndex + 1}" loading="lazy" />`;
     thumb.addEventListener('click', () => showImage(imageIndex));
     container.appendChild(thumb);
   }
